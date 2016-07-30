@@ -17,18 +17,17 @@ public class Blemd_via_CrossFade : MonoBehaviour
     void Update()
     {
         deltaTime += Time.deltaTime;
-        if (deltaTime > 1.0f)
+        if (deltaTime > 2.0f)
         {
             deltaTime = 0;
             morfDirection = !morfDirection;
             if (morfDirection)
             {
-                anim.CrossFade("Piece_Blend_C", 0);
+                anim.CrossFade("puyoSmallXY", 0.2f);// 0.2f is CrossFade time
             }
             else
-            //anim.CrossFade("Run");
             {
-
+                anim.CrossFade("Default", 0.2f);// 0.2f is CrossFade time
             }
         }
     }

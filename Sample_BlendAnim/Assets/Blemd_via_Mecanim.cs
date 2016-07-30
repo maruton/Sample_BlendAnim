@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class Blemd_via_Mecanim : MonoBehaviour {
-    public Animation anim;
+    public Animator anim;
 
     // Use this for initialization
     void Start () {
-        anim = GetComponent<Animation>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -14,16 +14,18 @@ public class Blemd_via_Mecanim : MonoBehaviour {
     bool morfDirection = false;
 	void Update () {
         deltaTime += Time.deltaTime;
-        if (deltaTime > 1.0f)
+        if (deltaTime > 3.0f)
         {
             deltaTime = 0;
             morfDirection = !morfDirection;
             if (morfDirection)
             {
-                //anim.CrossFade("Piece_Blend");
+                anim.SetBool("puyoLargeXY", true);//Animator window -> Parameter -> "puyoLargeXY"
+                Debug.Log("Piece_M: puyoLargeX = true");
             }
             else
-                //anim.CrossFade("Run");
+                anim.SetBool("puyoLargeXY", false);
+                Debug.Log("Piece_M: puyoLargeX = false");
             {
 
             }
